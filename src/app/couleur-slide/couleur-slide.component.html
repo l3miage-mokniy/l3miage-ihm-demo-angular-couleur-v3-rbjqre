@@ -1,0 +1,16 @@
+  <pre *ngIf="(obsRGB | async) as COL">
+    Rouge <input [ngModel]="COL.R"
+                 (ngModelChange) = "update({R: $event})"
+                 class="R"
+                 type="range"
+                 min="0"
+                 max="100" />
+    Vert  <input [ngModel]="COL.G"
+                 (ngModelChange)="update({G: $event})"
+                 class="G" type="range" min="0" max="100" />
+    Bleu  <input [ngModel]="COL.B"
+                 (ngModelChange)="update({B: $event})"
+                 class="B" type="range" min="0" max="100" />
+  </pre>
+
+<div [style.backgroundColor] = "obsCode | async"></div>
